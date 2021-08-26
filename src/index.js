@@ -14,7 +14,7 @@ const todo = [
     description: String,
     completed: Boolean,
     index: Number,
-  }
+  },
 ];
 function newTask() {
   const nextTodo = {
@@ -30,7 +30,7 @@ button.addEventListener('click', () => {
   const inputValue = input.value;
 
   // Printing Out Our Todo
-  if (input.value === ''){
+  if (input.value === '') {
 
   } else {
     todoItems.innerHTML +=
@@ -42,7 +42,7 @@ button.addEventListener('click', () => {
         <i class="far fa-trash-alt hide trash-can"></i>
       </div>
     </li>
-  `
+  `;
   }
   input.value = '';
 });
@@ -52,8 +52,8 @@ todoItems.addEventListener('click', (e) => {
     e.target.nextSibling.classList.toggle('strike');
   }
 
-  if (e.target.classList.contains ('dot-class')){
-    e.target.parentElement.parentElement.classList.toggle ('color');
+  if (e.target.classList.contains('dot-class')) {
+    e.target.parentElement.parentElement.classList.toggle('color');
     e.target.classList.toggle('hide');
     e.target.nextSibling.nextSibling.classList.toggle('hide');
   }
