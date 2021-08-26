@@ -1,13 +1,13 @@
 import './style.css';
 
-const input = document.getElementById("input");
-const button = document.getElementById("button");
-const todoItems = document.getElementById("todo-items");
-let strike = document.getElementsByClassName("strike")
+const input = document.getElementById('input');
+const button = document.getElementById('button');
+const todoItems = document.getElementById('todo-items');
+const strike = document.getElementsByClassName('strike');
 const checkbox = document.getElementsByTagName('input[type=checkbox]');
-let dot = document.getElementsByClassName("dot-class");
-let trash = document.getElementsByClassName("trash-can")
-let label = document.getElementsByTagName("label");
+const dot = document.getElementsByClassName('dot-class');
+const trash = document.getElementsByClassName('trash-can');
+let label = document.getElementsByTagName('label');
 
 let todo = [
   {
@@ -53,11 +53,10 @@ todoItems.addEventListener('click', (e) => {
 
   }
 
-  if(e.target.classList.contains("dot-class")){
-    e.target.parentElement.parentElement.classList.toggle("color");
-    e.target.classList.toggle("hide");
-    e.target.nextSibling.nextSibling.classList.toggle("hide")
+  if (e.target.classList.contains ('dot-class')){
+    e.target.parentElement.parentElement.classList.toggle('color');
+    e.target.classList.toggle('hide');
+    e.target.nextSibling.nextSibling.classList.toggle('hide');
 
-    
   }
-})
+});

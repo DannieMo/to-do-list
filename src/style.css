@@ -14,15 +14,15 @@ li {
   flex-flow: row;
 }
 
-.strike{
+.strike {
   text-decoration: line-through;
-  
 }
-.color{
+
+.color {
   background-color: yellow;
-  
 }
-.hide{
+
+.hide {
   display: none;
 }
 
@@ -54,9 +54,9 @@ li {
   gap: 42%; 
 }
 
-/* .fa, .fas {
+.fa, .fas {
   margin-left: 60px;
-} */
+}
 
 #reset {
   text-align: center;
