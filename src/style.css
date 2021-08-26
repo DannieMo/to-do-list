@@ -42,7 +42,7 @@ li:nth-of-type(odd) {
   height: 40px;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
   color: rgb(63, 55, 57);
   font-size: 16px;
   font-style: italic;
