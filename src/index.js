@@ -1,20 +1,20 @@
 import './style.css';
 
-const list = [
+let list = [
   {
     completed: false,
     description: 'Make sure that there are no linter errors.',
-    index: 1
+    index: 4
   },
   {
     completed: false,
     description: 'Make sure that you used correct GitHub Flow.',
-    index: 1
+    index: 3
   },
   {
     completed: false,
     description: 'Make sure that you documented your work in a professional way.',
-    index: 1
+    index: 2
   },
   {
     completed: false,
@@ -23,9 +23,10 @@ const list = [
   },
 ]
 
-const page = document.getElementById('todo-items');
+list = list.sort((a,b) =>  a.index - b.index);
 
 const show = () => {
+  const page = document.getElementById('todo-items');
   list.forEach((e) => {
     const li = document.createElement('li');
     li.append(e.description);
