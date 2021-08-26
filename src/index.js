@@ -4,26 +4,26 @@ let list = [
   {
     completed: false,
     description: 'Make sure that there are no linter errors.',
-    index: 4
+    index: 4,
   },
   {
     completed: false,
     description: 'Make sure that you used correct GitHub Flow.',
-    index: 3
+    index: 3,
   },
   {
     completed: false,
     description: 'Make sure that you documented your work in a professional way.',
-    index: 2
+    index: 2,
   },
   {
     completed: false,
     description: 'Then we write code',
-    index: 1
+    index: 1,
   },
-]
+];
 
-list = list.sort((a,b) =>  a.index - b.index);
+list = list.sort((a, b) => a.index - b.index);
 
 const page = document.getElementById('todo-items');
 
@@ -36,6 +36,6 @@ const show = () => {
     li.append(e.description);
     page.append(li);
   });
-}
+};
 
 show();
