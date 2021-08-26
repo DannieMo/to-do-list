@@ -25,10 +25,14 @@ let list = [
 
 list = list.sort((a,b) =>  a.index - b.index);
 
+const page = document.getElementById('todo-items');
+
 const show = () => {
-  const page = document.getElementById('todo-items');
   list.forEach((e) => {
     const li = document.createElement('li');
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    li.append(checkbox);
     li.append(e.description);
     page.append(li);
   });
