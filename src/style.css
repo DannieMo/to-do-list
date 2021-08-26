@@ -54,12 +54,13 @@ li {
   gap: 42%; 
 }
 
-.fa, .fas {
+/* .fa, .fas {
   margin-left: 60px;
-}
+} */
 
 #reset {
   text-align: center;
+  cursor: pointer;
 }
 
 #checkbox {
