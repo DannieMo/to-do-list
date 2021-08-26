@@ -14,10 +14,6 @@ This project is build with:
 - CSS
 - Javascript
 
-## Live Demo
-
-[Live Demo Link]()
-
 
 ## Getting Started
 
