@@ -1,27 +1,55 @@
 body {
   background-color: rgb(83, 76, 81);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 li { 
   padding: 1%;
   list-style: none;
+  font-size: 1.2rem;
 }
 
 li:nth-of-type(odd) {
-  background-color: #51a86e;
-  color: rgb(255, 253, 253);
+  background-color: rgb(255, 255, 255);
+  color: rgb(31, 30, 30);
 }
 
 #todo-items {
-  background-color: rgb(106, 106, 109);
+  background-color: #e8e8ee;
+  width: 100%;
+  padding-left: 0%;
 }
 
 #list-container {
   margin: 0 auto;
-  width: 50%;
+  width: 60%;
   border: 2px solid blanchedalmond;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
-  /* text-align: center; */
+  background-color: rgb(248, 248, 248);
+}
+
+.input1 {
+  width: 99.7%;
+  border: none;
+  background-color: #e8e8ee;
+  height: 40px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgb(63, 55, 57);
+  font-size: 16px;
+  font-style: italic;
+  padding: 10px;
+}
+
+#reset {
+  text-align: center;
+  font-size: 1.1rem;
 }
