@@ -51,10 +51,11 @@ li {
 .enter-item {
   display: flex;
   justify-content: space-between;
-  gap: 42%; 
+  gap: 42%;
 }
 
-.fa, .fas {
+.fa, 
+.fas {
   margin-left: 60px;
 }
 

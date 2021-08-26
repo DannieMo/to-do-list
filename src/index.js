@@ -7,33 +7,33 @@ const strike = document.getElementsByClassName('strike');
 const checkbox = document.getElementsByTagName('input[type=checkbox]');
 const dot = document.getElementsByClassName('dot-class');
 const trash = document.getElementsByClassName('trash-can');
-let label = document.getElementsByTagName('label');
+const label = document.getElementsByTagName('label');
 
-let todo = [
+const todo = [
   {
-  description: String,
-  completed: Boolean,
-  index: Number
+    description: String,
+    completed: Boolean,
+    index: Number,
   }
 ];
-function newTask(){
-  let nextTodo ={
+function newTask() {
+  const nextTodo = {
     description: input.value,
-    completed:true,
+    completed: true,
     index: 1,
-  }
-  todo.push(nextTodo)
+  };
+  todo.push(nextTodo);
 }
 
-button.addEventListener("click", () => {
-  //pushing into the array
+button.addEventListener('click', () => {
+  // pushing into the array
   const inputValue = input.value;
 
-  //Printing Out Our Todo
-  if(input.value == ""){
-    
-  }else{
-    todoItems.innerHTML += 
+  // Printing Out Our Todo
+  if (input.value === ''){
+
+  } else {
+    todoItems.innerHTML +=
     `<li>
       <input type="checkbox">
       <label for='checkbox' id='checkbox'>${inputValue}</label>
@@ -44,19 +44,17 @@ button.addEventListener("click", () => {
     </li>
   `
   }
-  input.value = "";
-})
+  input.value = '';
+});
 
 todoItems.addEventListener('click', (e) => {
   if (e.target.hasAttribute('type')) {
     e.target.nextSibling.classList.toggle('strike');
-
   }
 
   if (e.target.classList.contains ('dot-class')){
-    e.target.parentElement.parentElement.classList.toggle('color');
+    e.target.parentElement.parentElement.classList.toggle ('color');
     e.target.classList.toggle('hide');
     e.target.nextSibling.nextSibling.classList.toggle('hide');
-
   }
 });
