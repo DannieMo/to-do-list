@@ -1,4 +1,5 @@
 import './style.css';
+import './status.js'
 
 let list = [
   {
@@ -23,19 +24,42 @@ let list = [
   },
 ];
 
-list = list.sort((a, b) => a.index - b.index);
+list = localStorage.getItem('list') !== null
+  ? JSON.parse(localStorage.getItem(list))
+  : list;
+
 
 const page = document.getElementById('todo-items');
 
 const show = () => {
-  list.forEach((e) => {
+  list = list.sort((a, b) => a.index - b.index);
+  list.forEach((item) => {
     const li = document.createElement('li');
+    li.className = 'ul-li';
     const checkbox = document.createElement('input');
-    checkbox.setAttribute('type', 'checkbox');
+    checkbox.type = 'checkbox';
+    checkbox.id = 'completed';
+    checkbox.name = 'completed';
+    checkbox.className = 'completed';
+    // checkbox.setAttribute('type', 'checkbox');
+    // checkbox.className = 'completed';
+    const description = document.createElement('p');
+    description.className = 'description';
+    description.innerHTML = `${item.description}`;
+    if (item.completed === true ){
+      checkbox.checked = true;
+      description.style.textDecoration = 'line-through solid';
+    } else {
+      checkbox.checked = false;
+    }
+    checkbox.addEventListener ('change', (event) => {
+      completed(item.index, item, event, description);
+      localStorage.setItem('list', JSON.stringify(list));
+    });
     li.append(checkbox);
-    li.append(e.description);
+    li.append(description);
     page.append(li);
   });
 };
 
-show();
+window.addEventListener('load', show);
