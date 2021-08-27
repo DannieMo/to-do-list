@@ -1,5 +1,5 @@
 import './style.css';
-import './status.js'
+import './status.js';
 
 let list = [
   {
