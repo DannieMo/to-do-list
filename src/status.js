@@ -2,7 +2,7 @@ export default function status() {
   const list = JSON.parse(localStorage.getItem('list'));
   const checkbox = Object.values(document.getElementsByName('checkbox'));
   checkbox.forEach((element, i) => {
-    element.addEventListener('click', () => {
+    element.addEventListener('change', () => {
       if (element.checked) {
         list[i].completed = true;
         element.parentElement.style.textDecoration = 'line-through';
