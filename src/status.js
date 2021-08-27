@@ -12,5 +12,5 @@ export default function status() {
       }
       localStorage.setItem('list', JSON.stringify(list));
     });
-  })   
+  });
 }

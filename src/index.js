@@ -28,7 +28,7 @@ list = list.sort((a, b) => a.index - b.index);
 
 const show = () => {
   if (localStorage.getItem('list') !== null) {
-    list = JSON.parse(localStorage.getItem("list"));
+    list = JSON.parse(localStorage.getItem('list'));
   } else {
     localStorage.setItem('list', JSON.stringify(list));
   }
