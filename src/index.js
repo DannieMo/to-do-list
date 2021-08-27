@@ -1,5 +1,5 @@
 import './style.css';
-import './status.js';
+import status from './status.js';
 
 let list = [
   {
@@ -24,42 +24,35 @@ let list = [
   },
 ];
 
-list = localStorage.getItem('list') !== null
-  ? JSON.parse(localStorage.getItem(list))
-  : list;
+list = list.sort((a, b) => a.index - b.index);
 
-
-const page = document.getElementById('todo-items');
-
+if (!localStorage.getItem('todo-items')) {
+  localStorage.setItem('todo-items', JSON.stringify(list));
+}
 const show = () => {
-  list = list.sort((a, b) => a.index - b.index);
-  list.forEach((item) => {
+  let storeList;
+  if (localStorage.getItem('todo-items')) {
+    storeList = JSON.parse(localStorage.getItem('todo-items'));
+  }
+  const page = document.getElementById('todo-items');
+  storeList.forEach((e) => {
     const li = document.createElement('li');
-    li.className = 'ul-li';
     const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.id = 'completed';
-    checkbox.name = 'completed';
-    checkbox.className = 'completed';
-    // checkbox.setAttribute('type', 'checkbox');
-    // checkbox.className = 'completed';
-    const description = document.createElement('p');
-    description.className = 'description';
-    description.innerHTML = `${item.description}`;
-    if (item.completed === true ){
-      checkbox.checked = true;
-      description.style.textDecoration = 'line-through solid';
+    if (e.completed) {
+      (li.style.textDecoration = 'line through');
     } else {
-      checkbox.checked = false;
+      (li.style.textDecoration = 'none');
     }
-    checkbox.addEventListener ('change', (event) => {
-      completed(item.index, item, event, description);
-      localStorage.setItem('list', JSON.stringify(list));
-    });
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.name = 'checkbox';
+    checkbox.checked = e.completed;
     li.append(checkbox);
-    li.append(description);
+    li.append(e.description);
+    li.classList.add('list-group-item');
     page.append(li);
   });
 };
 
-window.addEventListener('load', show);
+show();
+
+status();
