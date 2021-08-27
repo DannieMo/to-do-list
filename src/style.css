@@ -1,6 +1,6 @@
 body {
   background-color: rgb(83, 76, 81);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h2 {
@@ -11,7 +11,7 @@ h2 {
 li {
   padding: 1%;
   list-style: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 li:nth-of-type(odd) {
@@ -25,6 +25,10 @@ li:nth-of-type(odd) {
   padding-left: 0%;
 }
 
+.list-group-item {
+  text-decoration: line-through;
+}
+
 #list-container {
   margin: 0 auto;
   width: 60%;
@@ -36,10 +40,15 @@ li:nth-of-type(odd) {
 }
 
 .input1 {
-  width: 99.7%;
+  width: 96%;
   border: none;
   background-color: #e8e8ee;
-  height: 40px;
+  height: 25px;
+  padding: 10px;
+}
+
+.fas {
+  font-size: 24px;
 }
 
 ::-webkit-input-placeholder {
