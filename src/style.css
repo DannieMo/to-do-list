@@ -25,6 +25,10 @@ li:nth-of-type(odd) {
   padding-left: 0%;
 }
 
+.list-group-item {
+  text-decoration: line-through;
+}
+
 #list-container {
   margin: 0 auto;
   width: 60%;

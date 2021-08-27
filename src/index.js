@@ -1,58 +1,57 @@
-import './style.css';
-import status from './status.js';
+import "./style.css";
+import status from "./status.js";
 
 let list = [
   {
     completed: false,
-    description: 'Make sure that there are no linter errors.',
+    description: "Make sure that there are no linter errors.",
     index: 4,
   },
   {
     completed: false,
-    description: 'Make sure that you used correct GitHub Flow.',
+    description: "Make sure that you used correct GitHub Flow.",
     index: 3,
   },
   {
     completed: false,
-    description: 'Make sure that you documented your work in a professional way.',
+    description:
+      "Make sure that you documented your work in a professional way.",
     index: 2,
   },
   {
     completed: false,
-    description: 'Then we write code',
+    description: "Then we write code",
     index: 1,
   },
 ];
 
 list = list.sort((a, b) => a.index - b.index);
 
-if (!localStorage.getItem('todo-items')) {
-  localStorage.setItem('todo-items', JSON.stringify(list));
-}
 const show = () => {
-  let storeList;
-  if (localStorage.getItem('todo-items')) {
-    storeList = JSON.parse(localStorage.getItem('todo-items'));
+  if (localStorage.getItem("list") !== null) {
+    list = JSON.parse(localStorage.getItem("list"));
   }
-  const page = document.getElementById('todo-items');
-  storeList.forEach((e) => {
-    const li = document.createElement('li');
-    const checkbox = document.createElement('input');
-    if (e.completed) {
-      (li.style.textDecoration = 'line through');
-    } else {
-      (li.style.textDecoration = 'none');
-    }
-    checkbox.setAttribute('type', 'checkbox');
-    checkbox.name = 'checkbox';
+  else {
+    localStorage.setItem("list", JSON.stringify(list));
+  }
+
+  const page = document.getElementById("todo-items");
+  list.forEach((e, index) => {
+    const li = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.setAttribute("type", "checkbox");
+    checkbox.name = "checkbox";
     checkbox.checked = e.completed;
     li.append(checkbox);
     li.append(e.description);
-    li.classList.add('list-group-item');
+    if (checkbox.checked) {
+      li.classList.add('list-group-item');
+    } else {
+      li.classList.remove('list-group-item');
+    };
     page.append(li);
   });
 };
 
 show();
-
 status();
