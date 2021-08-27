@@ -43,6 +43,10 @@ li:nth-of-type(odd) {
   padding: 10px;
 }
 
+.fas {
+  font-size: 24px;
+}
+
 ::-webkit-input-placeholder {
   color: rgb(63, 55, 57);
   font-size: 16px;
